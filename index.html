@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #111111;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            width: 190px;
+            height: 254px;
+            background-image: linear-gradient(144deg,#8608b4, #492fed 60%,#bd6fda);
+            border: none;
+            border-radius: 10px;
+            padding-top: 10px;
+            position: relative;
+            margin: auto;
+            font-family: inherit;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .card span {
+            font-weight: 600;
+            color: white;
+            display: block;
+            padding-top: 10px;
+            font-size: 1.3em;
+        }
+
+        .card .job {
+            font-weight: 400;
+            color: white;
+            display: block;
+            padding-top: 5px;
+            font-size: 1em;
+        }
+
+        .card .img {
+            width: 70px;
+            height: 70px;
+            background: #e8e8e8;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card button {
+            padding: 8px 25px;
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+            border: none;
+            margin-top: 30px;
+            background: #e8e8e8;
+            color: #111111;
+            font-weight: 600;
+        }
+
+        .card button:hover {
+            background: #212121;
+            color: #ffffff;
+        }
+
+        #card-details-modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card" data-id="1">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Aryan Profile"></div>
+            <span>Aryan</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p1.html'">Click</button>
+        </div>
+        <div class="card" data-id="2">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Gaurav"></div>
+            <span>Gaurav</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p2.html'">Click</button>
+        </div>
+        <div class="card" data-id="3">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Agam"></div>
+            <span>Agam</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p3.html'">Click</button>
+        </div>
+        <div class="card" data-id="4">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Arshiya"></div>
+            <span>Arshiya</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p4.html'">Click</button>
+        </div>
+        <div class="card" data-id="5">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Jashan"></div>
+            <span>Jashan</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p5.html'">Click</button>
+        </div>
+        <div class="card" data-id="6">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Arman"></div>
+            <span>Arman</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p6.html'">Click</button>
+        </div>
+        <div class="card" data-id="7">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Bhumika"></div>
+            <span>Bhumika</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p7.html'">Click</button>
+        </div>
+        <div class="card" data-id="8">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Bhavesh"></div>
+            <span>Bhavesh</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p8.html'">Click</button>
+        </div>
+        <div class="card" data-id="9">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Gagan"></div>
+            <span>Gagan</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p9.html'">Click</button>
+        </div>
+        <div class="card" data-id="10">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Hardik"></div>
+            <span>Hardik</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p10.html'">Click</button>
+        </div>
+        <div class="card" data-id="11">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Bilakshan"></div>
+            <span>Bilakshan</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p11.html'">Click</button>
+        </div>
+        <div class="card" data-id="12">
+            <div class="img"><img src="Aryan_proile.jpg" alt="Snoopy"></div>
+            <span>Aryan</span>
+            <p class="job">Student</p>
+            <button onclick="location.href='p12.html'">Click</button>
+        </div>
+    </div>
+
+    <div id="card-details-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Card Details</h2>
+            <p id="card-details-content"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.card');
+            const modal = document.getElementById('card-details-modal');
+            const modalContent = document.getElementById('card-details-content');
+            const closeBtn = document.querySelector('.close');
+
+            cards.forEach(card => {
+                card.addEventListener('click', (event) => {
+                    if (event.target.tagName !== 'BUTTON') {
+                        const cardId = card.getAttribute('data-id');
+                        showCardDetails(cardId);
+                    }
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            function showCardDetails(cardId) {
+                modalContent.textContent = `Detailed information for Card ${cardId}`;
+                modal.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
